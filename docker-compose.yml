@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  haproxy:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    container_name: haproxy
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy/
+    ports:
+      - "80:80"
+      - "8404:8404"
+    networks:
+      - haproxy-net
+
+networks:
+  haproxy-net:
+    driver: bridge

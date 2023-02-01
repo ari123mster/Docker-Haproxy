@@ -1,0 +1,1 @@
+FROM haproxytech/haproxy-alpine:2.2.28
